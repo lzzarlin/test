@@ -46,31 +46,31 @@ class ProductsController extends Controller
         $data = $request->all();
 
         if ($request->thumpic) {
-            $result = $uploader->save($request->thumpic, 'Product', '', 300);
+            $result = $uploader->save($request->thumpic, 'product', '', 300);
             if ($result) {
                 $data['thumpic'] = $result['path'];
             }
         }
         if ($request->pic_one) {
-            $result = $uploader->save($request->pic_one, 'Product', '', 1000);
+            $result = $uploader->save($request->pic_one, 'product', '', 1000);
             if ($result) {
                 $data['pic_one'] = $result['path'];
             }
         }
         if ($request->pic_two) {
-            $result = $uploader->save($request->pic_two, 'Productthump', '', 1000);
+            $result = $uploader->save($request->pic_two, 'productthump', '', 1000);
             if ($result) {
                 $data['pic_two'] = $result['path'];
             }
         }
         if ($request->pic_three) {
-            $result = $uploader->save($request->pic_three, 'Productthump', '', 1000);
+            $result = $uploader->save($request->pic_three, 'productthump', '', 1000);
             if ($result) {
                 $data['pic_three'] = $result['path'];
             }
         }
         if ($request->pic_four) {
-            $result = $uploader->save($request->pic_four, 'Productthump', '', 1000);
+            $result = $uploader->save($request->pic_four, 'productthump', '', 1000);
             if ($result) {
                 $data['pic_four'] = $result['path'];
             }
@@ -105,31 +105,31 @@ class ProductsController extends Controller
     {
         $data = $request->all();
         if ($request->thumpic) {
-            $result = $uploader->save($request->thumpic, 'Product', '', 300);
+            $result = $uploader->save($request->thumpic, 'product', '', 300);
             if ($result) {
                 $data['thumpic'] = $result['path'];
             }
         }
         if ($request->pic_one) {
-            $result = $uploader->save($request->pic_one, 'Product', '', 1000);
+            $result = $uploader->save($request->pic_one, 'product', '', 1000);
             if ($result) {
                 $data['pic_one'] = $result['path'];
             }
         }
         if ($request->pic_two) {
-            $result = $uploader->save($request->pic_two, 'Productthump', '', 1000);
+            $result = $uploader->save($request->pic_two, 'productthump', '', 1000);
             if ($result) {
                 $data['pic_two'] = $result['path'];
             }
         }
         if ($request->pic_three) {
-            $result = $uploader->save($request->pic_three, 'Productthump', '', 1000);
+            $result = $uploader->save($request->pic_three, 'productthump', '', 1000);
             if ($result) {
                 $data['pic_three'] = $result['path'];
             }
         }
         if ($request->pic_four) {
-            $result = $uploader->save($request->pic_four, 'Productthump', '', 1000);
+            $result = $uploader->save($request->pic_four, 'productthump', '', 1000);
             if ($result) {
                 $data['pic_four'] = $result['path'];
             }

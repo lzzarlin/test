@@ -52,12 +52,20 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/', 'PagesController@index')->name('index');
 // 产品路由
-
 Route::get('/products', 'PagesController@product')->name('product.index');
 // 产品栏目路由
 Route::get('/products/{category:slug}', 'PagesController@productList')->name('product');
 // 产品内容路由
 Route::get('/product/{product:slug}', 'PagesController@productShow')->name('product.show');
+
+// 应用路由
+Route::get('/applications', 'PagesController@application')->name('application.index');
+// 应用栏目路由
+Route::get('/applications/{category:slug}', 'PagesController@applicationList')->name('application');
+// 应用内容路由
+Route::get('/application/{anli:slug}', 'PagesController@applicationShow')->name('application.show');
+
+
 // 新闻路由
 Route::get('/news', 'PagesController@news')->name('news');
 Route::get('/news/{news:slug}', 'PagesController@newsShow')->name('news.show');

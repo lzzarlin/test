@@ -1,6 +1,6 @@
 @extends('front.layouts.inner_base')
-@section('keywords', $product->kewords)
-@section('description', $product->description)
+@section('keywords', $anli->kewords)
+@section('description', $anli->description)
 
 @section('style')
     <!-- Google Font -->
@@ -22,12 +22,12 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb" style="background-color: aliceblue;">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item"><a href="/Products">Products</a></li>
-                    <li class="breadcrumb-item"><a href="/Products/{{ $category->slug }}">{{ $category->name }}</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{ $product->name }}</li>
+                    <li class="breadcrumb-item"><a href="/applications">applications</a></li>
+                    <li class="breadcrumb-item"><a href="/applications/{{ $category->slug }}">{{ $category->name }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ $anli->title }}</li>
                 </ol>
             </nav>
-            <!-- Product Top -->
+            {{-- <!-- Product Top -->
             <div class="row">
                 <div class="col-lg-6">
                     <div class="card flex-md-row mb-4 box-shadow h-xl-300">
@@ -92,31 +92,29 @@
                     </div>
                 </div>
             </div>
-            <!-- End Product TOP-->
+            <!-- End Product TOP--> --}}
 
             <!-- Product Cards -->
             <div class="row mt-5" data-aos="fade-up" id="detail">
                 <div class="col-lg-9">
-                    <div class="row">
-                        <h2>Details</h2>
-                    </div>
                     <article>
+                        <h1 class="text-center">{{ $anli->title }}</h1>
                         <p class="lead">
                             And then some paragraph text to follow. The purpose of this HTML is to help determine what
                             default settings are with CSS and to make sure that all possible HTML Elements are included
                             in
                             this HTML so as to not miss any possible Elements when designing a site.
                         </p>
-                        {!! $product->body !!}
+                        {!! $anli->body !!}
                     </article>
 
                     <!-- pagination -->
                     <ul class="pagination ">
                         @if ($pre)
                             <li class="page-item page-prev">
-                                <a class="page-link" href="/product/{{ $pre->slug }}">
+                                <a class="page-link" href="/application/{{ $pre->slug }}">
                                     <div class="page-item-subtitle">previous</div>
-                                    <div class="page-item-title">{{ $pre->name }}</div>
+                                    <div class="page-item-title">{{ $pre->title }}</div>
                                 </a>
                             </li>
                         @else
@@ -129,9 +127,9 @@
                         @endif
                         @if ($next)
                             <li class="page-item page-next">
-                                <a class="page-link" href="/product/{{ $next->slug }}">
+                                <a class="page-link" href="/application/{{ $next->slug }}">
                                     <div class="page-item-subtitle">next</div>
-                                    <div class="page-item-title">{{ $next->name }}</div>
+                                    <div class="page-item-title">{{ $next->title }}</div>
                                 </a>
                             </li>
                         @else
@@ -147,15 +145,15 @@
                     <!--end pagination -->
                     <!-- related application -->
                     <div class="row gap-y" data-aos="fade-up">
-                        @foreach ($anlis as $anli)
+                        @foreach ($news as $new)
                             <div class="col-md-6 col-lg-4">
                                 <div class="card">
-                                    <img class="img-card-top" src="{{$anli->thumpic}}">
+                                    <img class="img-card-top" src="{{ $new->thumpic }}">
                                     <div class="card-body">
-                                        <a href="/product/{{$anli->slug}}">
-                                            <h5 class="card-title text-dark">{{$anli->title}}</h5>
+                                        <a href="/news/{{ $new->slug }}">
+                                            <h5 class="card-title text-dark">{{ $new->title }}</h5>
                                             <span class="card-text text-muted">
-                                                {{$anli->created_at}} </span>
+                                                {{ $new->created_at }} </span>
                                         </a>
                                     </div>
                                 </div>
@@ -170,15 +168,15 @@
                     <div class="row gap-y">
                         <div class="col-md-6 col-lg-12">
                             <div class="card text-center mb-2 py-3 bg-cyan">
-                                <h4>Products Categories</h4>
+                                <h4>Application Categories</h4>
                             </div>
                             <div class="list-group">
                                 @foreach ($categories as $catenav)
                                     @if ($catenav->id == $category->id)
-                                        <a href="/products/{{ $catenav->slug }}"
+                                        <a href="/applications/{{ $catenav->slug }}"
                                             class="list-group-item list-group-item-action active">{{ $catenav->name }}</a>
                                     @else
-                                        <a href="/products/{{ $catenav->slug }}"
+                                        <a href="/applications/{{ $catenav->slug }}"
                                             class="list-group-item list-group-item-action">
                                             {{ $catenav->name }}
                                         </a>
@@ -194,33 +192,17 @@
                             <div class="card text-center mb-2 py-3 bg-cyan">
                                 <h4>Related News</h4>
                             </div>
-                            <div class="card mt-3">
-                                <img class="img-card-top" src="img/blog4.jpg">
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title text-dark">Happy wife is happy life says life experts
-                                        </h5>
-                                    </a>
+                            @foreach ($products as $product)
+                                <div class="card mt-3">
+                                    <img class="img-card-top" src="{{ $product->thumpic }}">
+                                    <div class="card-body">
+                                        <a href="/product/{{ $product->slug }}">
+                                            <h5 class="card-title text-dark">{{ $product->name }}
+                                            </h5>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card mt-3">
-                                <img class="img-card-top" src="img/blog4.jpg">
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title text-dark">Happy wife is happy life says life experts
-                                        </h5>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card mt-3">
-                                <img class="img-card-top" src="img/blog4.jpg">
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title text-dark">Happy wife is happy life says life experts
-                                        </h5>
-                                    </a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <!-- end related news -->

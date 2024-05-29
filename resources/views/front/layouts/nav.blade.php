@@ -16,12 +16,11 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/products/molecular-sieve">Molecular Sieve</a>
                     <a class="dropdown-item" href="/products/desiccant">Desiccant</a>
-                    <a class="dropdown-item" href="/">Decoloration</a>
-                    <a class="dropdown-item" href="/">Molecular Sieve Powder</a>
-                    <a class="dropdown-item" href="/">Special Molecular Sieve</a>
+                    <a class="dropdown-item" href="/products/activated-molecular-sieve-powder">Activated Molecular Sieve Powder</a>
+                    <a class="dropdown-item" href="/products/special-molecular-sieve">Special Molecular Sieve</a>
                 </div>
             </li>
-            <li class="nav-item dropdown">
+            {{-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/application" id="navbarDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Appllication </a>
@@ -32,6 +31,9 @@
                     <a class="dropdown-item" href="/">Nitrogen Molecular Sieve</a>
                     <a class="dropdown-item" href="/">Oxygen Molecular Sieve</a>
                 </div>
+            </li> --}}
+            <li class="nav-item">
+                <a class="nav-link" href="/applications">Applications</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/news">News</a>
@@ -54,8 +56,7 @@
                         <path
                             d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
                     </svg>
-                        +86
-                        18955078288
+                    +86 132 6790 3557
                     </a>
                 </span>
             </li>

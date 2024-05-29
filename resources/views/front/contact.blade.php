@@ -39,28 +39,28 @@
                 <div class="row align-items-center cols-xs-space cols-sm-space cols-md-space">
                     <div class="col-lg-6">
                         <h3 class="heading heading-3 strong-300">
-                            国际贸易部门
+                            International Department
                         </h3>
                         <p class="lead mt-4 mb-4">
-                            Email: <a href="#">support@webpixels.io</a>
+                            Email: <a href="mailto:info@sh-guangji.com" rel="nofollow">info@sh-guangji.com</a>
                             <br>
-                            Tel: 0755.222.333
+                            Tel&Wechat: +86 132 6790 3557
                         </p>
-                        <p class="">
-                            Probably the most complete UI kit out there. Multiple functionalities and controls added,
+                        <p>
+                            Address:Room 1403,Jiahe International Building,No.16 Huayuan Road,Hongkou District,Shanghai
                         </p>
                     </div>
                     <div class="col-lg-6 ml-lg-auto">
                         <h3 class="heading heading-3 strong-300">
-                            国内贸易部门
+                            China Factory
                         </h3>
                         <p class="lead mt-4 mb-4">
-                            Email: <a href="#">support@webpixels.io</a>
+                            Email: <a href="mailto:" rel="nofollow">lzzarlin2022@gmail.com</a>
                             <br>
-                            Tel: 0755.222.333
+                            Tel&Wechat: +86 189 5507 8288
                         </p>
                         <p class="">
-                            安徽省 滁州市 明光市 石坝镇
+                            Address: Shiba Town, Mingguang City, Anhui Province, China
                         </p>
                     </div>
                 </div>

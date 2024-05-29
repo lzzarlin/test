@@ -14,7 +14,7 @@ NAVBAR (remove topnav if you don't want changed nav background on scroll)
 					<div class="col pt-4 pb-4">
 						<h1 class="display-3">Molecular Sieve <strong>production</strong> &amp; Supply</h1>
 						<h5 class="font-weight-light mb-4">With almost Twenty years <strong>experience</strong></h5>
-						<a href="#" class="btn btn-lg btn-outline-white btn-round-md mt-1">Learn more</a>
+						<a href="/about" class="btn btn-lg btn-outline-white btn-round-md mt-1">Learn more</a>
 					</div>
 					<div class="col align-self-bottom align-items-right text-right">
 						<img src="/front/img/fenzishai.png" class="rounded img-fluid" alt="">

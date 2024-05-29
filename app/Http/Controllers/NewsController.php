@@ -40,7 +40,7 @@ class NewsController extends Controller
     {
         $data = $request->all();
         if (request()->hasFile('thumpic')) {
-            $result = $uploader->save($request->thumpic, 'News', '', 300);
+            $result = $uploader->save($request->thumpic, 'news', '', 300);
             if ($result) {
                 $data['thumpic'] = $result['path'];
             }
@@ -77,7 +77,7 @@ class NewsController extends Controller
     {
         $data = $request->all();
         if (request()->hasFile('thumpic')) {
-            $result = $uploader->save($request->thumpic, 'News', '', 300);
+            $result = $uploader->save($request->thumpic, 'news', '', 300);
             if ($result) {
                 $data['thumpic'] = $result['path'];
             }

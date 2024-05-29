@@ -28,7 +28,7 @@ class AnlisController extends Controller
     {
         $data = $request->all();
         if (request()->hasFile('thumpic')) {
-            $result = $uploader->save($request->thumpic, 'Anli', '', 300);
+            $result = $uploader->save($request->thumpic, 'anli', '', 300);
             if ($result) {
                 $data['thumpic'] = $result['path'];
             }
@@ -54,7 +54,7 @@ class AnlisController extends Controller
     public function update(Request $request, ImageUploadHandler $uploader, Anli $anli){
         $data = $request->all();
         if (request()->hasFile('thumpic')) {
-            $result = $uploader->save($request->thumpic, 'Anli', '', 300);
+            $result = $uploader->save($request->thumpic, 'anli', '', 300);
             if ($result) {
                 $data['thumpic'] = $result['path'];
             }
