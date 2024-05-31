@@ -35,7 +35,7 @@
                             <a href=""><img src="/front/img/11.jpg" class="card-img-top">
                                 <div class="card-body text-center">
                                     <h3 class="heading h5 mb-1">
-                                        <span class="d-block"><a href="">Molecular Cieve</a></span>
+                                        <span class="d-block"><a href="">Molecular Sieve</a></span>
                                     </h3>
                                     <p class="mt-2">Creator of Boomerang, developer at Webpixels.</p>
                                     {{-- <a href="https://instagram.com/extrabright" target="_blank"
@@ -93,7 +93,7 @@
                             </h3>
                             <p class="lead mt-4">
                                 Shanghai Guangji Industrial Co., Ltd. is located in Mingguang City, Anhui Province, known as
-                                the "hometown of Attapulgite". We are professional manufacturer with a 13 year history,
+                                the "hometown of Attapulgite". We are professional manufacturer with a 16 year history,
                                 covering an area of over 25000 square meters and high production capacity. It is a
                                 technology export-oriented enterprise that integrates molecular sieve production, new
                                 technology product development, and marketing. We have a strong factory area, multiple

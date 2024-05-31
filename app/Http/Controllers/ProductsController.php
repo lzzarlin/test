@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Handlers\ImageUploadHandler;
+use App\Handlers\SlugTranslateHandler;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -14,10 +15,17 @@ class ProductsController extends Controller
      * Display a listing of the resource.
      *
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::with('user', 'category')->paginate(10);
-        return view('admin.products.index', compact('products'));
+        // 获取所有产品栏目
+        $categories = Category::where("type", '=', '1')->where("id", '!=', '1')->get();
+        if (isset($request->category_id)) {
+            $products = Product::where('category_id', '=', $request->category_id)->orderBy('id', 'desc')->with('user', 'category')->paginate(6);
+        } else {
+            $products = Product::orderBy('id', 'desc')->with('user', 'category')->paginate(6);
+        }
+
+        return view('admin.products.index', compact('products','categories'));
     }
 
     /**
@@ -75,7 +83,10 @@ class ProductsController extends Controller
                 $data['pic_four'] = $result['path'];
             }
         }
-
+        if (!$product->slug) {
+            $product->slug = app(SlugTranslateHandler::class)->translate($request->title);
+        }
+        $data['slug'] = $product->slug;
         $product->fill($data);
         $product->user_id = Auth::id();
         $product->save();
@@ -157,8 +168,8 @@ class ProductsController extends Controller
     {
         // 初始化返回数据，默认是失败的
         $data = [
-            'success'   => false,
-            'msg'       => '上传失败!',
+            'success' => false,
+            'msg' => '上传失败!',
             'file_path' => ''
         ];
         // 判断是否有上传文件，并赋值给 $file
@@ -168,8 +179,8 @@ class ProductsController extends Controller
             // 图片保存成功的话
             if ($result) {
                 $data['file_path'] = $result['path'];
-                $data['msg']       = "上传成功!";
-                $data['success']   = true;
+                $data['msg'] = "上传成功!";
+                $data['success'] = true;
             }
         }
         return $data;
@@ -182,7 +193,7 @@ class ProductsController extends Controller
             'code' => 200,
             'url' => '',
         ];
-        
+
         if ($file = $request->file('file')) {
             // 保存图片到本地
             $result = $uploader->save($file, 'article', Auth::id(), 1024);

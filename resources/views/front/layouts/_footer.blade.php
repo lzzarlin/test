@@ -1,9 +1,4 @@
- <!--------------------------------------FOOTER--------------------------------------->
- {{-- <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-     y="0px" viewbox="0 0 1440 126" style="enable-background:new 0 0 1440 126;" xml:space="preserve">
-     <path class="bg-gray" d="M685.6,38.8C418.7-11.1,170.2,9.9,0,30v96h1440V30C1252.7,52.2,1010,99.4,685.6,38.8z"
- />
- </svg> --}}
+
  <footer class="bg-gray pt-5 pb-3">
      <div class="container ">
          <div class="row">
@@ -11,7 +6,7 @@
                  <h5 class="mb-4 text-white"><a href="/about">About Us</a></h5>
                  <div>
                      <p>
-                         Shanghai Chunji International Trade Co.,Ltd is a professional manufacturer with about 16 years
+                         Shanghai Chunji International Trade Co.,Ltd is a professional manufacturer with about 18 years
                          history,
                          Our main product includes molecular sieve,desiccant,activated alumina,activated molecular
                          sieve powder and so on...
@@ -21,19 +16,21 @@
              <div class="col-lg-2 col-md-6 col-sm-6 d-xs-none">
                  <h5 class="mb-4 text-white"><a href="/products">Products</a></h5>
                  <ul class="list-unstyled text-small">
-                     <li><a class="text-muted" href="/product/molecular-sieve">Molecular Sieve</a></li>
-                     <li><a class="text-muted" href="/">Desiccant</a></li>
-                     <li><a class="text-muted" href="/">Decoloration</a></li>
-                     <li><a class="text-muted" href="/">Molecular Sieve Powder</a></li>
+                     <li><a class="text-muted" href="/products/molecular-sieve">Molecular Sieve</a></li>
+                     <li><a class="text-muted" href="/products/desiccant">Desiccant</a></li>
+                     <li><a class="text-muted" href="/products/activated-molecular-sieve-powder">Activated Molecular Sieve
+                        Powder</a></li>
+                     <li><a class="text-muted" href="/products/special-molecular-sieve">Special Molecular Sieve</a></li>
                  </ul>
              </div>
              <div class="col-lg-2 col-md-6 col-sm-6 d-xs-none">
-                 <h5 class="mb-4 text-white"><a href="/about">About</a></h5>
+                 <h5 class="mb-4 text-white"><a href="/applications">Applications</a></h5>
                  <ul class="list-unstyled text-small">
-                     <li><a class="text-muted" href="#">Contact</a></li>
-                     <li><a class="text-muted" href="#">Working Shop</a></li>
-                     <li><a class="text-muted" href="#">Honor</a></li>
-                     <li><a class="text-muted" href="#">Final resource</a></li>
+                     <li><a class="text-muted" href="/applications/air-drying">Air Drying</a></li>
+                     <li><a class="text-muted" href="/applications/air-separation">Air Separation</a></li>
+                     <li><a class="text-muted" href="/applications/air-purification">Air Purification</a></li>
+                     <li><a class="text-muted" href="/applications/petrochemical-industry">Petrochemical Industry</a></li>
+                     <li><a class="text-muted" href="/applications/other-applications">Other Applications</a></li>
                  </ul>
              </div>
              <div class="col-lg-4 col-md-8">

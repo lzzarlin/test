@@ -11,9 +11,14 @@ class CategoriesController extends Controller
      * Display a listing of the resource.
      *
      */
-    public function index()
+    public function index(Request $request)
     {
-        $categories = Category::all();
+        // dd($request->type);
+        if (isset($request->type)) {
+            $categories = Category::where('type', '=', $request->type)->paginate(10);
+        } else {
+            $categories = Category::paginate(10);
+        }
         return view('admin.categories.index', compact('categories'));
     }
 
@@ -33,7 +38,7 @@ class CategoriesController extends Controller
     public function store(Request $request, Category $category)
     {
         Category::create($request->all());
-        return redirect()->route('categories.index')->with('success','成功添加栏目');
+        return redirect()->route('categories.index')->with('success', '成功添加栏目');
     }
 
     /**
@@ -65,7 +70,7 @@ class CategoriesController extends Controller
     public function update(Request $request, Category $category)
     {
         $category->update($request->all());
-        return redirect()->route('categories.index')->with('success','栏目已被编辑成功！');
+        return redirect()->route('categories.index')->with('success', '栏目已被编辑成功！');
     }
 
     /**
@@ -77,6 +82,6 @@ class CategoriesController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
-        return redirect()->route('categories.index')->with('success','栏目已删除！');
+        return redirect()->route('categories.index')->with('success', '栏目已删除！');
     }
 }

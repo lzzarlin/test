@@ -29,6 +29,7 @@
                               <option value="1">产品</option>
                               <option value="2">应用案例</option>
                               <option value="3">新闻</option>
+                              <option value="4">单页面栏目</option>
                             </select>
                           </div>
                         <div class="mb-3">

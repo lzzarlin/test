@@ -7,11 +7,12 @@
             <div class="col">
                 <!-- Page pre-title -->
                 <div class="page-pretitle">
-
+                    @foreach ($categories as $category)
+                        <a href="/admin/products?category_id={{ $category->id }}" class="btn btn-primary">
+                            {{ $category->name }}
+                        </a>
+                    @endforeach
                 </div>
-                <h2 class="page-title">
-
-                </h2>
             </div>
             <!-- Page title actions -->
             <div class="col-auto ms-auto d-print-none">
@@ -45,47 +46,63 @@
                                     <th>Slug</th>
                                     <th>关键字</th>
                                     <th>创建人</th>
-                                    <th class="w-1">操作</th>
+                                    <th>操作</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($products as $product)
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex py-1 align-items-center">
-                                                <span class="avatar me-2 avatar-xl"
-                                                    style="background-image: url({{ $product->thumpic ? $product->thumpic : '/dist/img/000f.jpg' }})"></span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="text-secondary">{{ $product->name }}</div>
-                                        </td>
-                                        <td> 
-                                            <div class="text-secondary">{{ $product->category->name }}</div>
-                                        </td>
-                                        <td>
-                                            <div class="text-secondary">{{ $product->slug }}</div>
-                                        </td>
-                                        <td>
-                                            <div class="text-secondary">{{ $product->keywords }}</div>
-                                        </td>
-                                        <td>
-                                            <div class="text-secondary">{{ $product->user->name }}</div>
-                                        </td>
-                                        <td>
-                                            <a href="{{ route('products.edit', $product->id) }}"
-                                                class="btn btn-cyan w-100 btn-sm m-1">编辑</a>
-                                            <form action="{{ route('products.destroy', $product->id) }}" method="post"
-                                                style="display: inline-block;" onsubmit="return confirm('您确定要删除吗？');">
-                                                {{ csrf_field() }}
-                                                {{ method_field('DELETE') }}
-                                                <button type="submit" class="btn btn-red w-100 btn-sm m-1">
-                                                    <i class="far fa-trash-alt"></i> 删除
-                                                </button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                @if ($products->total())
+
+                                    @foreach ($products as $product)
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex py-1 align-items-center">
+                                                    <span class="avatar me-2 avatar-xl"
+                                                        style="background-image: url({{ $product->thumpic ? $product->thumpic : '/dist/img/000f.jpg' }})"></span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="text-secondary">{{ $product->name }}</div>
+                                            </td>
+                                            <td>
+                                                <div class="text-secondary">{{ $product->category->name }}</div>
+                                            </td>
+                                            <td>
+                                                <div class="text-secondary">{{ $product->slug }}</div>
+                                            </td>
+                                            <td>
+                                                <div class="text-secondary">{{ $product->keywords }}</div>
+                                            </td>
+                                            <td>
+                                                <div class="text-secondary">{{ $product->user->name }}</div>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <a href="{{ route('products.edit', $product->id) }}"
+                                                            class="btn btn-cyan w-100 btn-sm">编辑</a>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <form action="{{ route('products.destroy', $product->id) }}"
+                                                            method="post" style="display: inline-block;"
+                                                            onsubmit="return confirm('您确定要删除吗？');">
+                                                            {{ csrf_field() }}
+                                                            {{ method_field('DELETE') }}
+                                                            <button type="submit" class="btn btn-red w-100 btn-sm">
+                                                                <i class="far fa-trash-alt"></i> 删除
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @else
+                                    <div class="row">
+                                        <tr>
+                                            <td class="bg-gray">暂无数据，请添加！</td>
+                                        </tr>
+                                    </div>
+                                @endif
                             </tbody>
                         </table>
                     </div>
@@ -94,7 +111,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        {!! $products->render() !!}
+                        {!! $products->appends(request()->all())->render() !!}
                     </div>
                 </div>
             </div>

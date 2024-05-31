@@ -68,7 +68,9 @@ Route::get('/application/{anli:slug}', 'PagesController@applicationShow')->name(
 
 // 新闻路由
 Route::get('/news', 'PagesController@news')->name('news');
+Route::get('/newss/{category:slug}', 'PagesController@newsList')->name('application.list');
 Route::get('/news/{news:slug}', 'PagesController@newsShow')->name('news.show');
+
 // 关于我们路由
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/contact', 'PagesController@contact')->name('contact');

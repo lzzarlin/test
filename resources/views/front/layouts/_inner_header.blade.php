@@ -12,7 +12,16 @@ NAVBAR
     <div class="container text-white h-100 tofront">
         <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-10">
-                <h2 class="display-3">We provide various products.</h2>
+                @if (isset($category))
+                    <h2 class="display-3">{{ $category->name }}</h2>
+                    <p>{{ $category->description }}</p>
+                @else
+                    <h2 class="display-3">We provide various products.</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In nisi itaque voluptatum dolorem non
+                        laborum modi eum vitae ipsa maiores eius eveniet asperiores, optio molestiae culpa doloremque
+                        dolor
+                        ut possimus!</p>
+                @endif
             </div>
         </div>
     </div>

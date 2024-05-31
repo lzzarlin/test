@@ -7,11 +7,12 @@
             <div class="col">
                 <!-- Page pre-title -->
                 <div class="page-pretitle">
-
+                    @foreach ($categories as $category)
+                        <a href="/admin/anlis?category_id={{ $category->id }}" class="btn btn-primary">
+                            {{ $category->name }}
+                        </a>
+                    @endforeach
                 </div>
-                <h2 class="page-title">
-
-                </h2>
             </div>
             <!-- Page title actions -->
             <div class="col-auto ms-auto d-print-none">
@@ -46,60 +47,80 @@
                                     <th>所属栏目</th>
                                     <th>创建时间</th>
                                     <th>发布人</th>
-                                    <th class="w-1">操作</th>
+                                    <th>操作</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($anlis as $anli)
+                                @if ($anlis->total() != 0)
+                                    @foreach ($anlis as $anli)
+                                        <tr>
+                                            <td>
+                                                <div class="text-secondary">{{ $anli->id }}</div>
+
+                                            </td>
+                                            <td>
+                                                <div class="d-flex py-1 align-items-center">
+                                                    <span class="avatar me-2 avatar-xl"
+                                                        style="background-image: url({{ $anli->thumpic ? $anli->thumpic : '/dist/img/000f.jpg' }})"></span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="text-secondary">{{ $anli->title }}</div>
+                                            </td>
+                                            <td>
+                                                <div class="text-secondary">{{ $anli->slug }}</div>
+                                            </td>
+                                            <td>
+                                                <div class="text-secondary">{{ $anli->category->name }}</div>
+                                            </td>
+                                            <td>
+                                                <div class="text-secondary">{{ $anli->created_at }}</div>
+                                            </td>
+                                            <td>
+                                                <div class="text-secondary">{{ $anli->user->name }}</div>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <a href="{{ route('anlis.edit', $anli->id) }}"
+                                                            class="btn btn-cyan w-100 btn-sm m-1">编辑</a>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <form action="{{ route('anlis.destroy', $anli->id) }}"
+                                                            method="post" style="display: inline-block;"
+                                                            onsubmit="return confirm('您确定要删除吗？');">
+                                                            {{ csrf_field() }}
+                                                            {{ method_field('DELETE') }}
+                                                            <button type="submit" class="btn btn-red w-100 btn-sm m-1">
+                                                                <i class="far fa-trash-alt"></i> 删除
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @else
                                     <tr>
                                         <td>
-                                            <div class="text-secondary">{{ $anli->id }}</div>
-
-                                        </td>
-                                        <td>
-                                            <div class="d-flex py-1 align-items-center">
-                                                <span class="avatar me-2 avatar-xl"
-                                                    style="background-image: url({{ $anli->thumpic ? $anli->thumpic : '/dist/img/000f.jpg' }})"></span>
+                                            <div class="row">
+                                                <p>暂无数据，请添加</p>
                                             </div>
                                         </td>
-                                        <td>
-                                            <div class="text-secondary">{{ $anli->title }}</div>
-                                        </td>
-                                        <td>
-                                            <div class="text-secondary">{{ $anli->slug }}</div>
-                                        </td>
-                                        <td>
-                                            <div class="text-secondary">{{ $anli->category->name }}</div>
-                                        </td>
-                                        <td>
-                                            <div class="text-secondary">{{ $anli->created_at }}</div>
-                                        </td>
-                                        <td>
-                                            <div class="text-secondary">{{ $anli->user->name }}</div>
-                                        </td>
-                                        <td>
-                                            <a href="{{ route('anlis.edit', $anli->id) }}"
-                                                class="btn btn-cyan w-100 btn-sm m-1">编辑</a>
-                                            <form action="{{ route('anlis.destroy', $anli->id) }}" method="post"
-                                                style="display: inline-block;" onsubmit="return confirm('您确定要删除吗？');">
-                                                {{ csrf_field() }}
-                                                {{ method_field('DELETE') }}
-                                                <button type="submit" class="btn btn-red w-100 btn-sm m-1">
-                                                    <i class="far fa-trash-alt"></i> 删除
-                                                </button>
-                                            </form>
-                                        </td>
                                     </tr>
-                                @endforeach
+
+                                @endif
+
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
+
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        {!! $anlis->render() !!}
+                        {!! $anlis->appends(request()->all())->render() !!}
                     </div>
                 </div>
             </div>

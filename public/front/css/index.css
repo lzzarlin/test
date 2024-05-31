@@ -73,15 +73,6 @@ button.bg-secondary-white:focus {
     opacity: 0.7
 }
 
-.text-danger {
-    color: #f03 !important
-}
-
-a.text-danger:hover,
-a.text-danger:focus {
-    color: #cc0029 !important
-}
-
 .fluid-paragraph {
     width: 680px;
     margin: auto;

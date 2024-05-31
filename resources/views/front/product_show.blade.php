@@ -1,4 +1,5 @@
 @extends('front.layouts.inner_base')
+@section('title', $product->name)
 @section('keywords', $product->kewords)
 @section('description', $product->description)
 
@@ -22,8 +23,8 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb" style="background-color: aliceblue;">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item"><a href="/Products">Products</a></li>
-                    <li class="breadcrumb-item"><a href="/Products/{{ $category->slug }}">{{ $category->name }}</a></li>
+                    <li class="breadcrumb-item"><a href="/products">Products</a></li>
+                    <li class="breadcrumb-item"><a href="/products/{{ $category->slug }}">{{ $category->name }}</a></li>
                     <li class="breadcrumb-item active" aria-current="page">{{ $product->name }}</li>
                 </ol>
             </nav>
@@ -77,7 +78,7 @@
                                 {{ $product->name }}
                             </h1>
                             <div class="mb-1">
-                                <p>Application：{{ $product->keywords }}fdsfsfsdfdsfdsfdsfdsf <a href="">fdfdf</a> fdf df Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati dolore incidunt at assumenda esse? Quidem neque, nisi cupiditate aperiam, similique sapiente architecto cum ea voluptatum eligendi autem voluptatibus et minima.</p>
+                                <p>Application：{{ $product->application }}</p>
                             </div>
                             <div class="mb-1">
                                 <p>Package：{{ $product->description }}</p>

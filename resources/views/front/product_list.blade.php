@@ -1,7 +1,7 @@
 @extends('front.layouts.inner_base')
-@section('keywords', 'hello')
-@section('description', '待填入')
-
+@section('title', $category->name)
+@section('keywords', $category->keywords)
+@section('description', $category->description)
 @section('style')
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,600,800" rel="stylesheet">

@@ -1,6 +1,7 @@
 @extends('front.layouts.inner_base')
-@section('keywords', 'hello')
-@section('description', '待填入')
+@section('title', 'Contact us Guangji')
+@section('keywords', 'Contact us')
+@section('description', 'Contact us')
 
 @section('style')
     <!-- Google Font -->

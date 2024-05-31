@@ -1,7 +1,9 @@
 @extends('front.layouts.inner_base')
-@section('title', 'about guangji')
-@section('keywords', '')
-@section('description', '')
+@section('title', 'About Guangji Industrial')
+@section('keywords', 'Guangji Industrial,hometown of Attapulgite')
+@section('description',
+    'Shanghai Guangji Industrial Co., Ltd. is located in Mingguang City, Anhui Province, known as
+    the "hometown of Attapulgite". ')
 
 @section('style')
     <!-- Google Font -->
@@ -32,11 +34,16 @@
                             <h3 class="heading h3">About Guangji Industrial</h3>
                             <p class="lead mt-4">
                                 Shanghai Guangji Industrial Co., Ltd. is located in Mingguang City, Anhui Province, known as
-                                the "hometown of Attapulgite". We are professional manufacturer with a 13 year history,
-                                covering an area of over 25000 square meters and high production capacity. It is a
+                                the "hometown of Attapulgite". We are professional manufacturer with a 18 year history,
+                                covering an area of over 30000 square meters and high production capacity. It is a
                                 technology export-oriented enterprise that integrates molecular sieve production, new
                                 technology product development, and marketing. We have a strong factory area, multiple
-                                processing plants, complete laboratories, and 4 production lines.
+                                processing plants, complete laboratories, and 4 production lines.<br />
+                                Main products include various molecular sieves,activated molecular sieve powder, activated
+                                alumina,desiccant clay，all products passed the ISO9001: 2008 quality management system
+                                certification .Guangji is based on the production of high-tech content,high value-added
+                                attapulgite products,high quality molecular sieve products,the company’s products sell well
+                                in domestic and foreign markets .
                             </p>
                         </div>
                     </div>
@@ -46,7 +53,7 @@
         <section class="slice slice-lg" data-delimiter="1">
             <div class="container">
                 <div class="mb-5 text-center">
-                    <h3 class="heading h3">Our Working Shop</h3>
+                    <h3 class="heading h3">Our Factory</h3>
                 </div>
                 <div class="row cols-xs-space cols-sm-space cols-md-space" data-aos="fade-up">
                     <div class="col-lg-3 col-md-6">

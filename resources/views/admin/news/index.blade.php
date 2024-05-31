@@ -46,7 +46,7 @@
                                     <th>所属栏目</th>
                                     <th>创建时间</th>
                                     <th>发布人</th>
-                                    <th class="w-1">操作</th>
+                                    <th>操作</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -78,16 +78,22 @@
                                             <div class="text-secondary">{{ $new->user->name }}</div>
                                         </td>
                                         <td>
-                                            <a href="{{ route('news.edit', $new->id) }}"
-                                                class="btn btn-cyan w-100 btn-sm m-1">编辑</a>
-                                            <form action="{{ route('news.destroy', $new->id) }}" method="post"
-                                                style="display: inline-block;" onsubmit="return confirm('您确定要删除吗？');">
-                                                {{ csrf_field() }}
-                                                {{ method_field('DELETE') }}
-                                                <button type="submit" class="btn btn-red w-100 btn-sm m-1">
-                                                    <i class="far fa-trash-alt"></i> 删除
-                                                </button>
-                                            </form>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <a href="{{ route('news.edit', $new->id) }}"
+                                                        class="btn btn-cyan w-100 btn-sm m-1">编辑</a>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <form action="{{ route('news.destroy', $new->id) }}" method="post"
+                                                        style="display: inline-block;" onsubmit="return confirm('您确定要删除吗？');">
+                                                        {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
+                                                        <button type="submit" class="btn btn-red w-100 btn-sm m-1">
+                                                            <i class="far fa-trash-alt"></i> 删除
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach

@@ -15,7 +15,8 @@
                     placeholder="E-mail address*">
             </div>
             <div class="col-md-3">
-                <button type="submit" class="btn btn-info btn-round-md btn-lg w-100">Submit</button>
+                {{-- <button type="submit" class="btn btn-info btn-round-md btn-lg w-100">Submit</button> --}}
+                <a href="/contact" class="btn btn-info btn-round-md btn-lg w-100">Submit</a>
             </div>
         </form>
     </div>

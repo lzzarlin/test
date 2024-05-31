@@ -1,4 +1,5 @@
 @extends('front.layouts.inner_base')
+@section('title', $anli->title)
 @section('keywords', $anli->kewords)
 @section('description', $anli->description)
 
@@ -27,72 +28,6 @@
                     <li class="breadcrumb-item active" aria-current="page">{{ $anli->title }}</li>
                 </ol>
             </nav>
-            {{-- <!-- Product Top -->
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="card flex-md-row mb-4 box-shadow h-xl-300">
-                        <!-- 产品图片轮播图 -->
-                        <div id="carousel-indicators-thumb" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                            <div class="carousel-indicators carousel-indicators-thumb">
-                                <button type="button" data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="0"
-                                    class="ratio ratio-4x3 active"
-                                    style="background-image: url({{ $product->thumpic }})"></button>
-                                <button type="button" data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="1"
-                                    class="ratio ratio-4x3"
-                                    style="background-image: url({{ $product->pic_two }})"></button>
-                                <button type="button" data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="2"
-                                    class="ratio ratio-4x3"
-                                    style="background-image: url({{ $product->pic_three }})"></button>
-                                <button type="button" data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="3"
-                                    class="ratio ratio-4x3"
-                                    style="background-image: url({{ $product->pic_four }})"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" alt=""
-                                        src="{{ $product->thumpic }}" />
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" alt="" src="{{ $product->pic_two }}" />
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" alt=""
-                                        src="{{ $product->pic_three }}" />
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" alt=""
-                                        src="{{ $product->pic_four }}" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 产品图片轮播图结束 -->
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card flex-md-row mb-4 box-shadow h-xl-300">
-                        <div class="card-body d-flex flex-column align-items-start">
-                            <strong class="d-inline-block mb-2 text-success">Product Information</strong>
-                            <h1 class="mb-1">
-                                {{ $product->name }}
-                            </h1>
-                            <div class="mb-1">
-                                <p>Application：{{ $product->keywords }}fdsfsfsdfdsfdsfdsfdsf <a href="">fdfdf</a> fdf df Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati dolore incidunt at assumenda esse? Quidem neque, nisi cupiditate aperiam, similique sapiente architecto cum ea voluptatum eligendi autem voluptatibus et minima.</p>
-                            </div>
-                            <div class="mb-1">
-                                <p>Package：{{ $product->description }}</p>
-                            </div>
-                            <div class="mb-1">
-                                <p>Price：{{ $product->description }}</p>
-                            </div>
-                            <div class="mt-3" >
-                                <a class="btn btn-info shadow btn-round-md text-white ">get a quote</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Product TOP--> --}}
 
             <!-- Product Cards -->
             <div class="row mt-5" data-aos="fade-up" id="detail">
@@ -100,10 +35,7 @@
                     <article>
                         <h1 class="text-center">{{ $anli->title }}</h1>
                         <p class="lead">
-                            And then some paragraph text to follow. The purpose of this HTML is to help determine what
-                            default settings are with CSS and to make sure that all possible HTML Elements are included
-                            in
-                            this HTML so as to not miss any possible Elements when designing a site.
+                            {{ $anli->description }}
                         </p>
                         {!! $anli->body !!}
                     </article>
@@ -140,7 +72,6 @@
                                 </a>
                             </li>
                         @endif
-
                     </ul>
                     <!--end pagination -->
                     <!-- related application -->
@@ -190,7 +121,7 @@
                     <div class="row gap-y" data-aos="fade-up">
                         <div class="col-md-6 col-lg-12">
                             <div class="card text-center mb-2 py-3 bg-cyan">
-                                <h4>Related News</h4>
+                                <h4>Related Products</h4>
                             </div>
                             @foreach ($products as $product)
                                 <div class="card mt-3">

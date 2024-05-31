@@ -31,14 +31,22 @@
                                 <option value="1" selected>产品</option>
                                 <option value="2">应用案例</option>
                                 <option value="3">新闻</option>
+                                <option value="4">单页面栏目</option>
                                 @elseif ($category->type == 2)
                                 <option value="1">产品</option>
                                 <option value="2" selected>应用案例</option>
                                 <option value="3">新闻</option>
-                                @else
+                                <option value="4">单页面栏目</option>
+                                @elseif($category->type == 3)
                                 <option value="1">产品</option>
                                 <option value="2">应用案例</option>
                                 <option value="3" selected>新闻</option>
+                                <option value="4">单页面栏目</option>
+                                @else
+                                <option value="1">产品</option>
+                                <option value="2">应用案例</option>
+                                <option value="3">新闻</option>
+                                <option value="4" selected>单页面栏目</option>
                                 @endif
                             </select>
                           </div>

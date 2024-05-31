@@ -98,7 +98,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
+                {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#navbar-layout" data-bs-toggle="dropdown"
                         data-bs-auto-close="false" role="button" aria-expanded="true">
                         <span
@@ -126,12 +126,12 @@
                                 </a>
                                 <a class="dropdown-item" href="#">
                                     联系我们
-                                    {{-- <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span> --}}
+                                    <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span>
                                 </a>
                             </div>
                         </div>
                     </div>
-                </li>
+                </li> --}}
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#navbar-help" data-bs-toggle="dropdown"
