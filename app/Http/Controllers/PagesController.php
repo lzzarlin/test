@@ -23,8 +23,9 @@ class PagesController extends Controller
     // 站点主页
     public function index()
     {
+        $news = News::latest()->take(3)->get();
 
-        return view('front.index');
+        return view('front.index',compact('news'));
     }
 
     // 产品首页
@@ -113,9 +114,11 @@ class PagesController extends Controller
     {
         $categories = Category::where('type', '=', '3')->where('id', '!=', '3')->get();
         $category = Category::where('id', '=', $news->category_id)->first();
+        // 相关新闻
+        $relnews = News::where('category_id', '=', $category->id)->latest()->take(3)->get();
         $pre = News::where('category_id', '=', $category->id)->where('id', '<', $news->id)->first();
         $next = News::where('category_id', '=', $category->id)->where('id', '>', $news->id)->first();
-        return view('front.news_show', compact('news','categories','pre','next','category'));
+        return view('front.news_show', compact('news','categories','pre','next','category','relnews'));
     }
 
 

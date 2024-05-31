@@ -6,9 +6,9 @@
     <link rel="apple-touch-icon" sizes="76x76" href="/front/img/favicon.ico">
     <link rel="icon" type="image/png" href="/front/img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>@yield('title', 'product list Guang ji Industrial in china')</title>
-    <meta name="keywords" content="@yield('keywords', 'molecular cieve')" />
-    <meta name="description" content="@yield('description', 'molecular cieve')" />
+    <title>@yield('title', 'molecular cieve manufacturer in China - GuangJi')</title>
+    <meta name="keywords" content="@yield('keywords', 'molecular cieve manufacturer in China')" />
+    <meta name="description" content="@yield('description', 'molecular cieve manufacturer in China')" />
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     @yield('style')
 </head>

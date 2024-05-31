@@ -52,7 +52,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">关键词</label>
-                            <input name="keywords" class="form-control" value="{{ $product->slug }}">
+                            <input name="keywords" class="form-control" value="{{ $product->keywords }}">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">产品简介</label>

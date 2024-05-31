@@ -77,45 +77,20 @@
             </div>
             <div class="col-md-4">
                 <div class="row cols-md-space cols-sm-space cols-xs-space">
-                    <div class="col-lg-12">
-                        <div class="card border-0">
-                            <img src="/front/img/img-1-800x600.jpg" class="img-fluid img-center rounded z-depth-2">
-                            <div class="pt-4">
-                                <span class="text-muted">Oct 15, 2018</span>
-                                <a href="#" class="heading h4 d-block mt-1">Listen to the nature</a>
-                                <p class="mt-3">
-                                    When we strive to become better than we are, everything around us becomes better,
-                                    too.
-                                </p>
+                    @foreach ($relnews as $relnew)
+                        <div class="col-lg-12">
+                            <div class="card border-0">
+                                <img src="{{ $relnew->thumpic }}" class="img-fluid img-center rounded z-depth-2">
+                                <div class="pt-4">
+                                    <span class="text-muted">{{ $relnew->created_at }}</span>
+                                    <a href="#" class="heading h4 d-block mt-1">{{ $relnew->title }}</a>
+                                    <p class="mt-3">
+                                        {{ $relnew->description }}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="card border-0">
-                            <img src="/front/img/img-2-800x600.jpg" class="img-fluid img-center rounded z-depth-2">
-                            <div class="pt-4">
-                                <span class="text-muted">Oct 15, 2018</span>
-                                <a href="#" class="heading h4 d-block mt-1">Listen to the nature</a>
-                                <p class="mt-3">
-                                    When we strive to become better than we are, everything around us becomes better,
-                                    too.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="card border-0">
-                            <img src="/front/img/img-3-800x600.jpg" class="img-fluid img-center rounded z-depth-2">
-                            <div class="pt-4">
-                                <span class="text-muted">Oct 15, 2018</span>
-                                <a href="#" class="heading h4 d-block mt-1">Listen to the nature</a>
-                                <p class="mt-3">
-                                    When we strive to become better than we are, everything around us becomes better,
-                                    too.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

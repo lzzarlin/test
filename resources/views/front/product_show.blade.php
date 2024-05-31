@@ -1,6 +1,6 @@
 @extends('front.layouts.inner_base')
 @section('title', $product->name)
-@section('keywords', $product->kewords)
+@section('keywords', $product->keywords)
 @section('description', $product->description)
 
 @section('style')
@@ -39,8 +39,7 @@
                                     class="ratio ratio-4x3 active"
                                     style="background-image: url({{ $product->thumpic }})"></button>
                                 <button type="button" data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="1"
-                                    class="ratio ratio-4x3"
-                                    style="background-image: url({{ $product->pic_two }})"></button>
+                                    class="ratio ratio-4x3" style="background-image: url({{ $product->pic_two }})"></button>
                                 <button type="button" data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="2"
                                     class="ratio ratio-4x3"
                                     style="background-image: url({{ $product->pic_three }})"></button>
@@ -50,19 +49,16 @@
                             </div>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img class="d-block w-100" alt=""
-                                        src="{{ $product->thumpic }}" />
+                                    <img class="d-block w-100" alt="" src="{{ $product->thumpic }}" />
                                 </div>
                                 <div class="carousel-item">
                                     <img class="d-block w-100" alt="" src="{{ $product->pic_two }}" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block w-100" alt=""
-                                        src="{{ $product->pic_three }}" />
+                                    <img class="d-block w-100" alt="" src="{{ $product->pic_three }}" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block w-100" alt=""
-                                        src="{{ $product->pic_four }}" />
+                                    <img class="d-block w-100" alt="" src="{{ $product->pic_four }}" />
                                 </div>
                             </div>
                         </div>
@@ -86,7 +82,7 @@
                             <div class="mb-1">
                                 <p>Price：{{ $product->description }}</p>
                             </div>
-                            <div class="mt-3" >
+                            <div class="mt-3">
                                 <a class="btn btn-info shadow btn-round-md text-white ">get a quote</a>
                             </div>
                         </div>
@@ -151,12 +147,12 @@
                         @foreach ($anlis as $anli)
                             <div class="col-md-6 col-lg-4">
                                 <div class="card">
-                                    <img class="img-card-top" src="{{$anli->thumpic}}">
+                                    <img class="img-card-top" src="{{ $anli->thumpic }}">
                                     <div class="card-body">
-                                        <a href="/product/{{$anli->slug}}">
-                                            <h5 class="card-title text-dark">{{$anli->title}}</h5>
+                                        <a href="/product/{{ $anli->slug }}">
+                                            <h5 class="card-title text-dark">{{ $anli->title }}</h5>
                                             <span class="card-text text-muted">
-                                                {{$anli->created_at}} </span>
+                                                {{ $anli->created_at }} </span>
                                         </a>
                                     </div>
                                 </div>
@@ -195,33 +191,17 @@
                             <div class="card text-center mb-2 py-3 bg-cyan">
                                 <h4>Related News</h4>
                             </div>
+                            @foreach ($news as $new)
                             <div class="card mt-3">
-                                <img class="img-card-top" src="img/blog4.jpg">
+                                <img class="img-card-top" src="{{$new->thumpic}}">
                                 <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title text-dark">Happy wife is happy life says life experts
+                                    <a href="/news/{{$new->slug}}">
+                                        <h5 class="card-title text-dark">{{$new->title}}
                                         </h5>
                                     </a>
                                 </div>
                             </div>
-                            <div class="card mt-3">
-                                <img class="img-card-top" src="img/blog4.jpg">
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title text-dark">Happy wife is happy life says life experts
-                                        </h5>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card mt-3">
-                                <img class="img-card-top" src="img/blog4.jpg">
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title text-dark">Happy wife is happy life says life experts
-                                        </h5>
-                                    </a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <!-- end related news -->

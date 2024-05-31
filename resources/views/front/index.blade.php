@@ -121,8 +121,8 @@
                             <div class="col-md-6">
                                 <div class="card bg-lighter mb-lg mb-lg-0">
                                     <div class="px-3">
-                                            <img class="card-img z-depth-2" src="/front/img/anli1.jpg"
-                                                style="margin-top: -30px;" alt="Homapage">
+                                        <img class="card-img z-depth-2" src="/front/img/anli1.jpg"
+                                            style="margin-top: -30px;" alt="Homapage">
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title mb-2"><a href="">13X molecular sieve</a></h5>
@@ -149,12 +149,13 @@
                     <div class="col-md-4">
                         <div class="card bg-lighter mb-lg mb-lg-0">
                             <div class="px-3">
-                                <img class="card-img z-depth-2" src="/front/img/anli3.jpg"
-                                    style="margin-top: -30px;" alt="Homapage">
+                                <img class="card-img z-depth-2" src="/front/img/anli3.jpg" style="margin-top: -30px;"
+                                    alt="Homapage">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title mb-2">XH-7 XH-9 Refrigerated molecular sieve</h5>
-                                <p class="card-text">Used for refrigeration systems such as air conditioning and refrigerators
+                                <p class="card-text">Used for refrigeration systems such as air conditioning and
+                                    refrigerators
                                 </p>
                             </div>
                         </div>
@@ -162,8 +163,8 @@
                     <div class="col-md-4">
                         <div class="card bg-lighter mb-lg mb-lg-0">
                             <div class="px-3">
-                                <img class="card-img z-depth-2" src="/front/img/anli4.jpg"
-                                    style="margin-top: -30px;" alt="Homapage">
+                                <img class="card-img z-depth-2" src="/front/img/anli4.jpg" style="margin-top: -30px;"
+                                    alt="Homapage">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title mb-2">3A molecular sieve</h5>
@@ -174,8 +175,8 @@
                     <div class="col-md-4">
                         <div class="card bg-lighter mb-lg mb-lg-0">
                             <div class="px-3">
-                                <img class="card-img z-depth-2" src="/front/img/anli1.jpg"
-                                    style="margin-top: -30px;" alt="Homapage">
+                                <img class="card-img z-depth-2" src="/front/img/anli1.jpg" style="margin-top: -30px;"
+                                    alt="Homapage">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title mb-2">molecular sieve powder</h5>
@@ -218,42 +219,20 @@
             </div>
         </div>
         <div class="row cols-md-space cols-sm-space cols-xs-space" data-aos="fade-up">
-            <div class="col-lg-4">
-                <div class="card border-0">
-                    <img src="/front/img/transport.png" class="img-fluid img-center rounded z-depth-2">
-                    <div class="pt-4">
-                        <span class="text-muted">May 15, 2024</span>
-                        <a href="#" class="heading h4 d-block mt-1">shipment</a>
-                        <p class="mt-3">
-                            When we strive to become better than we are, everything around us becomes better, too.
-                        </p>
+            @foreach ($news as $new)
+                <div class="col-lg-4">
+                    <div class="card border-0">
+                        <img src="{{ $new->thumpic }}" class="img-fluid img-center rounded z-depth-2">
+                        <div class="pt-4">
+                            <span class="text-muted">{{$new->created_at}}</span>
+                            <a href="/news/{{ $new->slug }}" class="heading h4 d-block mt-1">{{ $new->title }}</a>
+                            <p class="mt-3">
+                                {{ $new->description }}
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card border-0">
-                    <img src="/front/img/transport.png" class="img-fluid img-center rounded z-depth-2">
-                    <div class="pt-4">
-                        <span class="text-muted">May 15, 2024</span>
-                        <a href="#" class="heading h4 d-block mt-1">shipment</a>
-                        <p class="mt-3">
-                            When we strive to become better than we are, everything around us becomes better, too.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card border-0">
-                    <img src="/front/img/transport.png" class="img-fluid img-center rounded z-depth-2">
-                    <div class="pt-4">
-                        <span class="text-muted">May 15, 2024</span>
-                        <a href="#" class="heading h4 d-block mt-1">shipment</a>
-                        <p class="mt-3">
-                            When we strive to become better than we are, everything around us becomes better, too.
-                        </p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
         <div class="text-center mt-5">
             <a href="/news" class="text-uppercase">
