@@ -90,24 +90,30 @@
                             <div class="col-md-6">
                                 <div class="card bg-lighter mb-lg mb-lg-0">
                                     <div class="px-3">
-                                        <img class="card-img z-depth-2" src="/front/img/anli1.jpg"
-                                            style="margin-top: -30px;" alt="Homapage">
+                                        <img class="card-img z-depth-2"
+                                            src="/uploads/images/anli/_1717487719_iNVm5k2p2D.jpg" style="margin-top: -30px;"
+                                            alt="Application of Molecular Sieves in Air Conditioning Refrigeration">
                                     </div>
                                     <div class="card-body">
-                                        <h5 class="card-title mb-2"><a href="">13X molecular sieve</a></h5>
-                                        <p class="card-text ">13X Application in the field of petrochemicals</p>
+                                        <h5 class="card-title mb-2"><a href="/application/refrigerant-drying">Air Conditioning Refrigeration Systems</a></h5>
+                                        <p class="card-text ">In Air conditioning refrigeration systems, molecular sieves,
+                                            as an efficient adsorbent, play a crucial role.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="card bg-lighter mb-lg mb-lg-0">
                                     <div class="px-3">
-                                        <img class="card-img z-depth-2" src="/front/img/anli2.jpg"
-                                            style="margin-top: -30px;" alt="Homapage">
+                                        <img class="card-img z-depth-2"
+                                            src="/uploads/images/anli/_1717461109_EZfuPtNs9W.jpg" style="margin-top: -30px;"
+                                            alt="Polyurethane Dehydration">
                                     </div>
                                     <div class="card-body">
-                                        <h5 class="card-title mb-2">4A molecular sieve</h5>
-                                        <p class="card-text">4A brake specific molecular sieve</p>
+                                        <h5 class="card-title mb-2"><a
+                                                href="/application/polyurethane-dehydration">Polyurethane Dehydration</a>
+                                        </h5>
+                                        <p class="card-text">In polyurethane production, molecular sieve powder used to
+                                            remove residual moisture from the reactants and the reaction environment.</p>
                                     </div>
                                 </div>
                             </div>
@@ -121,10 +127,10 @@
                                 <a href="/application/{{ $anli->slug }}" target="_blank">
                                     <div class="px-3">
                                         <img class="card-img z-depth-2" src="{{ $anli->thumpic }}"
-                                            style="margin-top: -30px;" alt="Homapage">
+                                            style="margin-top: -30px;" alt="{{ $anli->title }}">
                                     </div>
                                     <div class="card-body">
-                                        <h5 class="card-title mb-2">{{ $anli->title }}</h5>
+                                        <h5 class="card-title mb-2 text-center">{{ $anli->title }}</h5>
                                         <p class="card-text">{{ $anli->description }}
                                         </p>
                                     </div>
