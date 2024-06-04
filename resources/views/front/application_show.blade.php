@@ -1,6 +1,6 @@
 @extends('front.layouts.inner_base')
 @section('title', $anli->title)
-@section('keywords', $anli->kewords)
+@section('keywords', $anli->keywords)
 @section('description', $anli->description)
 
 @section('style')

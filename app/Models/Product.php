@@ -15,6 +15,7 @@ class Product extends Model
         'slug',
         'keywords',
         'description',
+        'isRecommend',
         'price',
         'package',
         'application',

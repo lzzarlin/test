@@ -20,6 +20,7 @@ return new class extends Migration {
             $table->string('name');
             $table->string('slug')->unique();
             $table->string('type'); // 栏目类型 1 产品 2 应用案例 3 新闻
+            $table->string('title'); // 搜索引擎title
             $table->string('keywords');
             $table->string('description');
         });
@@ -29,6 +30,7 @@ return new class extends Migration {
             'name' => '产品列表',
             'slug' => 'product',
             'type' => '1',
+            'title' => '产品列表',
             'keywords' => '产品,产品名称',
             'description' => '这是一个产品栏目的介绍',
         ]);
@@ -37,6 +39,7 @@ return new class extends Migration {
             'name' => '案例列表',
             'slug' => 'cases',
             'type' => '2',
+            'title' => '案例列表',
             'keywords' => '产品,产品名称',
             'description' => '这是一个产品栏目的介绍',
         ]);
@@ -45,6 +48,7 @@ return new class extends Migration {
             'name' => '新闻列表',
             'slug' => 'news',
             'type' => '3',
+            'title' => '新闻列表',
             'keywords' => '产品,产品名称',
             'description' => '这是一个产品栏目的介绍',
         ]);

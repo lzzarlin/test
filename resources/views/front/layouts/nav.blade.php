@@ -33,18 +33,6 @@
                     <a class="dropdown-item" href="/applications/other-applications">Other Applications</a>
                 </div>
             </li>
-            {{-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/applications" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Appllication </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/">Insulationg Glass Molecular Sieve</a>
-                    <a class="dropdown-item" href="/">Aotomobile Brake System Molecular Sieve</a>
-                    <a class="dropdown-item" href="/">XH Molecular Sieve For Refrigeration</a>
-                    <a class="dropdown-item" href="/">Nitrogen Molecular Sieve</a>
-                    <a class="dropdown-item" href="/">Oxygen Molecular Sieve</a>
-                </div>
-            </li> --}}
             <li class="nav-item">
                 <a class="nav-link" href="/news">News</a>
             </li>

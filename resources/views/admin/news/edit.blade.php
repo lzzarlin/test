@@ -85,7 +85,7 @@
                 ],
                 textarea: $('#editor'),
                 upload: {
-                    url: '{{ route('products.upload_image') }}',
+                    url: '{{ route('products.uploadimage') }}',
                     params: {
                         _token: '{{ csrf_token() }}'
                     },

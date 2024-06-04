@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Anli;
 use App\Models\Category;
+use App\Models\Message;
 use App\Models\News;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -15,7 +16,8 @@ class PagesController extends Controller
     public function root()
     {
         if (auth()->check()) {
-            return view('pages.root');
+            $messages = Message::paginate(10);
+            return view('pages.root', compact('messages'));
         }
         return redirect()->to('login');
     }
@@ -23,9 +25,11 @@ class PagesController extends Controller
     // 站点主页
     public function index()
     {
+        $products = Product::latest()->where('isRecommend', '=', '1')->take(4)->get();
+        $anlis = Anli::latest()->where('isRecommend', '=', '1')->take(3)->get();
         $news = News::latest()->take(3)->get();
 
-        return view('front.index',compact('news'));
+        return view('front.index', compact('news', 'anlis', 'products'));
     }
 
     // 产品首页
@@ -39,7 +43,7 @@ class PagesController extends Controller
     public function productList(Request $request, Category $category)
     {
         // 判断该栏目是否为产品栏目 不是 返回404
-        if($category->type != '1') {
+        if ($category->type != '1') {
             abort(404);
         }
         // 查询出所有产品栏目 非顶级栏目
@@ -52,7 +56,7 @@ class PagesController extends Controller
     public function productShow(Request $request, Product $product)
     {
         // 相关案例
-        $anlis = Anli::latest()->take(6)->get();
+        $anlis = Anli::latest()->take(3)->get();
         $news = News::latest()->take(3)->get();
         // 查询出所有产品栏目 非顶级栏目
         $categories = Category::where('type', '=', '1')->where('id', '!=', '1')->get();
@@ -108,7 +112,7 @@ class PagesController extends Controller
         $categories = Category::where('type', '=', '2')->where('id', '!=', '2')->get();
         // $category = DB::table('categories')->where('slug', 'molecular-sieve')->first();
         $news = News::where('category_id', '=', $category->id)->paginate('6');
-        return view('front.news_list', compact('categories','news','category'));
+        return view('front.news_list', compact('categories', 'news', 'category'));
     }
     public function newsShow(Request $request, News $news)
     {
@@ -118,7 +122,7 @@ class PagesController extends Controller
         $relnews = News::where('category_id', '=', $category->id)->latest()->take(3)->get();
         $pre = News::where('category_id', '=', $category->id)->where('id', '<', $news->id)->first();
         $next = News::where('category_id', '=', $category->id)->where('id', '>', $news->id)->first();
-        return view('front.news_show', compact('news','categories','pre','next','category','relnews'));
+        return view('front.news_show', compact('news', 'categories', 'pre', 'next', 'category', 'relnews'));
     }
 
 
@@ -126,7 +130,7 @@ class PagesController extends Controller
     public function about()
     {
         $category = Category::where('slug', '=', 'about')->first();
-        return view('front.about',compact('category'));
+        return view('front.about', compact('category'));
     }
     // 联系我们
     public function contact()

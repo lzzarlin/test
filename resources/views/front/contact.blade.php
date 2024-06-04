@@ -1,8 +1,7 @@
 @extends('front.layouts.inner_base')
-@section('title', 'Contact us Guangji')
-@section('keywords', 'Contact us')
-@section('description', 'Contact us')
-
+@section('title', $category->title)
+@section('keywords', $category->keywords)
+@section('description', $category->description)
 @section('style')
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,600,800" rel="stylesheet">
@@ -70,25 +69,28 @@
                 <div class="row align-items-center cols-xs-space cols-sm-space cols-md-space">
                     <div class="col-lg-12">
                         <h3 class="heading h3 mb-4">Send us a message</h3>
-                        <form>
+                        <form action="{{ route('message.store') }}" method="POST" accept-charset="UTF-8">
+                            @include('shared._error')
+                            @include('shared._messages')
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Name" type="text">
+                                        <input class="form-control" placeholder="Name" name="name" type="text">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Email address" type="email">
+                                        <input class="form-control" placeholder="Email address" name="email" type="email">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" rows="5" placeholder="Your message"></textarea>
+                                        <textarea class="form-control" rows="5" name="message" placeholder="Your message"></textarea>
                                     </div>
                                 </div>
                             </div>

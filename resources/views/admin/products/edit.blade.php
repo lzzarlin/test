@@ -59,6 +59,13 @@
                             <textarea name="description" class="form-control" rows="5">{{ $product->description }}</textarea>
                         </div>
                         <div class="mb-3">
+                            <div class="form-label">是否推荐</div>
+                            <label class="form-check">
+                                <input type="checkbox" name="isRecommend" value="1" class="form-check-input" {{($product->isRecommend ==1) ? "checked" : ""}}>
+                                <span class="form-check-label">是否推荐</span>
+                            </label>
+                        </div>
+                        <div class="mb-3">
                             <label class="form-label">price</label>
                             <input name="price" class="form-control" value="{{ $product->price }}">
                         </div>

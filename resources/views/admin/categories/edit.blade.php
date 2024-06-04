@@ -55,6 +55,10 @@
                             <input name="slug" class="form-control" value="{{$category->slug}}">
                         </div>
                         <div class="mb-3">
+                            <label class="form-label">Title（搜索引擎显示标题）</label>
+                            <input name="title" class="form-control" value="{{$category->title}}">
+                        </div>
+                        <div class="mb-3">
                             <label class="form-label">关键词</label>
                             <input name="keywords" class="form-control" value="{{$category->keywords}}">
                         </div>

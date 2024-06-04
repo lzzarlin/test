@@ -16,6 +16,7 @@ class Anli extends Model
         'slug',
         'keywords',
         'description',
+        'isRecommend',
         'thumpic',
         'body',
     ];

@@ -16,7 +16,7 @@
                     <input type="hidden" name="_method" value="PATCH">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="card-header">
-                        <h3 class="card-title">添加新闻</h3>
+                        <h3 class="card-title">编辑案例</h3>
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
@@ -40,7 +40,7 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">新闻标题</label>
+                            <label class="form-label">案例标题</label>
                             <input name="title" class="form-control" value="{{ $anli->title }}">
                         </div>
                         <div class="mb-3">
@@ -48,8 +48,15 @@
                             <input name="keywords" class="form-control" value="{{ $anli->keywords }}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">新闻简介</label>
+                            <label class="form-label">案例简介</label>
                             <textarea name="description" class="form-control" rows="5">{{ $anli->description }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-label">是否推荐</div>
+                            <label class="form-check">
+                                <input type="checkbox" name="isRecommend" value="1" class="form-check-input" {{($anli->isRecommend ==1) ? "checked" : ""}}>
+                                <span class="form-check-label">是否推荐</span>
+                            </label>
                         </div>
                         <div class="mb-3">
                             <div class="row">
@@ -66,7 +73,7 @@
                             </div>
                         </div>
 
-                        <div class="mb-3"><label class="form-label">新闻内容</label>
+                        <div class="mb-3"><label class="form-label">案例详细内容</label>
                             <textarea name="body" class="form-control" id="editor" rows="6" placeholder="请填入至少三个字符的内容。" required>{{ $anli->body }}</textarea>
                         </div>
                         <div class="card-footer text-end">
@@ -96,7 +103,7 @@
                 ],
                 textarea: $('#editor'),
                 upload: {
-                    url: '{{ route('products.upload_image') }}',
+                    url: '{{ route('products.uploadimage') }}',
                     params: {
                         _token: '{{ csrf_token() }}'
                     },

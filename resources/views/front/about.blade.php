@@ -1,9 +1,7 @@
 @extends('front.layouts.inner_base')
-@section('title', 'About Guangji Industrial')
-@section('keywords', 'Guangji Industrial,hometown of Attapulgite')
-@section('description',
-    'Shanghai Guangji Industrial Co., Ltd. is located in Mingguang City, Anhui Province, known as
-    the "hometown of Attapulgite". ')
+@section('title', $category->title)
+@section('keywords', $category->keywords)
+@section('description', $category->description)
 
 @section('style')
     <!-- Google Font -->

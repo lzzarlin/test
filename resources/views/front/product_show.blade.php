@@ -1,5 +1,5 @@
 @extends('front.layouts.inner_base')
-@section('title', $product->name)
+@section('title', $product->name . ' - molecular sieve manufacturer in china')
 @section('keywords', $product->keywords)
 @section('description', $product->description)
 
@@ -37,29 +37,42 @@
                             <div class="carousel-indicators carousel-indicators-thumb">
                                 <button type="button" data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="0"
                                     class="ratio ratio-4x3 active"
-                                    style="background-image: url({{ $product->thumpic }})"></button>
-                                <button type="button" data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="1"
-                                    class="ratio ratio-4x3" style="background-image: url({{ $product->pic_two }})"></button>
-                                <button type="button" data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="2"
-                                    class="ratio ratio-4x3"
-                                    style="background-image: url({{ $product->pic_three }})"></button>
-                                <button type="button" data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="3"
-                                    class="ratio ratio-4x3"
-                                    style="background-image: url({{ $product->pic_four }})"></button>
+                                    style="background-image: url({{ $product->pic_one }})"></button>
+                                @if ($product->pic_two)
+                                    <button type="button" data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="1"
+                                        class="ratio ratio-4x3"
+                                        style="background-image: url({{ $product->pic_two }})"></button>
+                                @endif
+                                @if ($product->pic_three)
+                                    <button type="button" data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="2"
+                                        class="ratio ratio-4x3"
+                                        style="background-image: url({{ $product->pic_three }})"></button>
+                                @endif
+                                @if ($product->pic_four)
+                                    <button type="button" data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="3"
+                                        class="ratio ratio-4x3"
+                                        style="background-image: url({{ $product->pic_four }})"></button>
+                                @endif
                             </div>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img class="d-block w-100" alt="" src="{{ $product->thumpic }}" />
+                                    <img class="d-block w-100" alt="" src="{{ $product->pic_one }}" />
                                 </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" alt="" src="{{ $product->pic_two }}" />
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" alt="" src="{{ $product->pic_three }}" />
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" alt="" src="{{ $product->pic_four }}" />
-                                </div>
+                                @if ($product->pic_two)
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" alt="" src="{{ $product->pic_two }}" />
+                                    </div>
+                                @endif
+                                @if ($product->pic_three)
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" alt="" src="{{ $product->pic_three }}" />
+                                    </div>
+                                @endif
+                                @if ($product->pic_four)
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" alt="" src="{{ $product->pic_four }}" />
+                                    </div>
+                                @endif
                             </div>
                         </div>
 
@@ -77,13 +90,16 @@
                                 <p>Application：{{ $product->application }}</p>
                             </div>
                             <div class="mb-1">
-                                <p>Package：{{ $product->description }}</p>
+                                <p>Package：{{ $product->package }}</p>
                             </div>
                             <div class="mb-1">
-                                <p>Price：{{ $product->description }}</p>
+                                <p>Price：{{ $product->price }}</p>
+                            </div>
+                            <div class="mb-1">
+                                <p>{{ $product->description }}</p>
                             </div>
                             <div class="mt-3">
-                                <a class="btn btn-info shadow btn-round-md text-white ">get a quote</a>
+                                <a class="btn btn-info shadow btn-round-md text-white " href="/contact" target="_blank">get a quote</a>
                             </div>
                         </div>
                     </div>
@@ -98,12 +114,6 @@
                         <h2>Details</h2>
                     </div>
                     <article>
-                        <p class="lead">
-                            And then some paragraph text to follow. The purpose of this HTML is to help determine what
-                            default settings are with CSS and to make sure that all possible HTML Elements are included
-                            in
-                            this HTML so as to not miss any possible Elements when designing a site.
-                        </p>
                         {!! $product->body !!}
                     </article>
 
@@ -149,7 +159,7 @@
                                 <div class="card">
                                     <img class="img-card-top" src="{{ $anli->thumpic }}">
                                     <div class="card-body">
-                                        <a href="/product/{{ $anli->slug }}">
+                                        <a href="/application/{{ $anli->slug }}">
                                             <h5 class="card-title text-dark">{{ $anli->title }}</h5>
                                             <span class="card-text text-muted">
                                                 {{ $anli->created_at }} </span>
@@ -192,15 +202,15 @@
                                 <h4>Related News</h4>
                             </div>
                             @foreach ($news as $new)
-                            <div class="card mt-3">
-                                <img class="img-card-top" src="{{$new->thumpic}}">
-                                <div class="card-body">
-                                    <a href="/news/{{$new->slug}}">
-                                        <h5 class="card-title text-dark">{{$new->title}}
-                                        </h5>
-                                    </a>
+                                <div class="card mt-3">
+                                    <img class="img-card-top" src="{{ $new->thumpic }}">
+                                    <div class="card-body">
+                                        <a href="/news/{{ $new->slug }}">
+                                            <h5 class="card-title text-dark">{{ $new->title }}
+                                            </h5>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
                             @endforeach
                         </div>
                     </div>

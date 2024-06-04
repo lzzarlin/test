@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('thumpic')->nullable();
+            $table->boolean('isRecommend')->default(0);
             $table->string('keywords');
             $table->string('description');
             $table->longText('body')->nullable();

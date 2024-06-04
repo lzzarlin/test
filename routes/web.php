@@ -17,17 +17,20 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::resource('anlis', 'AnlisController');
     Route::resource('banners', 'BannersController');
     // 图片上传路由
-    Route::post('upload_image', 'ProductsController@uploadImage')->name('products.upload_image');
-    Route::post('uploadimage', 'ProductsController@upload_Image')->name('products.uploadimage');
+    Route::post('upload_image', 'ProductsController@upload_Image')->name('products.upload_image');
+    Route::post('uploadimage', 'ProductsController@uploadImage')->name('products.uploadimage');
 });
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-// // 限制1小时内登录次数
+// 限制1小时内登录次数
 Route::middleware('throttle:5,10')->group(function () {
     Route::post('login', 'Auth\LoginController@login');
 });
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-
+// 限制1小时内发送信息次数
+Route::middleware('throttle:3,60')->group(function () {
+    Route::post('/postmessage', 'MessagesController@store')->name('message.store');
+});
 // // 用户注册相关路由
 // Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 // Route::post('register', 'Auth\RegisterController@register');

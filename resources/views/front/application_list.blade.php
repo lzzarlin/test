@@ -1,5 +1,5 @@
 @extends('front.layouts.inner_base')
-@section('title', $category->name)
+@section('title', $category->title)
 @section('keywords', $category->keywords)
 @section('description', $category->description)
 

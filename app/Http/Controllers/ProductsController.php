@@ -25,7 +25,7 @@ class ProductsController extends Controller
             $products = Product::orderBy('id', 'desc')->with('user', 'category')->paginate(6);
         }
 
-        return view('admin.products.index', compact('products','categories'));
+        return view('admin.products.index', compact('products', 'categories'));
     }
 
     /**
@@ -66,25 +66,25 @@ class ProductsController extends Controller
             }
         }
         if ($request->pic_two) {
-            $result = $uploader->save($request->pic_two, 'productthump', '', 1000);
+            $result = $uploader->save($request->pic_two, 'product', '', 1000);
             if ($result) {
                 $data['pic_two'] = $result['path'];
             }
         }
         if ($request->pic_three) {
-            $result = $uploader->save($request->pic_three, 'productthump', '', 1000);
+            $result = $uploader->save($request->pic_three, 'product', '', 1000);
             if ($result) {
                 $data['pic_three'] = $result['path'];
             }
         }
         if ($request->pic_four) {
-            $result = $uploader->save($request->pic_four, 'productthump', '', 1000);
+            $result = $uploader->save($request->pic_four, 'product', '', 1000);
             if ($result) {
                 $data['pic_four'] = $result['path'];
             }
         }
         if (!$product->slug) {
-            $product->slug = app(SlugTranslateHandler::class)->translate($request->title);
+            $product->slug = app(SlugTranslateHandler::class)->translate($request->name);
         }
         $data['slug'] = $product->slug;
         $product->fill($data);
@@ -128,24 +128,28 @@ class ProductsController extends Controller
             }
         }
         if ($request->pic_two) {
-            $result = $uploader->save($request->pic_two, 'productthump', '', 1000);
+            $result = $uploader->save($request->pic_two, 'product', '', 1000);
             if ($result) {
                 $data['pic_two'] = $result['path'];
             }
         }
         if ($request->pic_three) {
-            $result = $uploader->save($request->pic_three, 'productthump', '', 1000);
+            $result = $uploader->save($request->pic_three, 'product', '', 1000);
             if ($result) {
                 $data['pic_three'] = $result['path'];
             }
         }
         if ($request->pic_four) {
-            $result = $uploader->save($request->pic_four, 'productthump', '', 1000);
+            $result = $uploader->save($request->pic_four, 'product', '', 1000);
             if ($result) {
                 $data['pic_four'] = $result['path'];
             }
         }
-
+        if ($request->has('isRecommend')) {
+            $data['isRecommend'] = 1;
+        } else {
+            $data['isRecommend'] = 0;
+        }
         $product->fill($data);
         $product->update();
         return redirect()->route('products.index')->with('success', '产品编辑成功！');

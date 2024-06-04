@@ -30,53 +30,22 @@
                     </div>
                 </div>
                 <div class="row cols-xs-space cols-sm-space cols-md-space" data-aos="fade-up">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <a href=""><img src="/front/img/11.jpg" class="card-img-top">
-                                <div class="card-body text-center">
-                                    <h3 class="heading h5 mb-1">
-                                        <span class="d-block"><a href="">Molecular Sieve</a></span>
-                                    </h3>
-                                    <p class="mt-2">Creator of Boomerang, developer at Webpixels.</p>
-                                    {{-- <a href="https://instagram.com/extrabright" target="_blank"
-                                        class="btn btn-sm btn-primary">See More</a> --}}
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <a href=""><img src="/front/img/22.jpg" class="card-img-top"></a>
-                            <div class="card-body text-center">
-                                <h3 class="heading h5 mb-1">
-                                    <span class="d-block"><a href="">Desiccant</a></span>
-                                </h3>
-                                <p class="mt-2">Design at Webpixels, creator of Boomerang.</p>
+                    @foreach ($products as $product)
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card">
+                                <a href="/product/{{ $product->slug }}"><img src="{{ $product->thumpic }}"
+                                        class="card-img-top">
+                                    <div class="card-body text-center">
+                                        <h3 class="heading h5 mb-1">
+                                            <span class="d-block"><a
+                                                    href="/product/{{ $product->slug }}">{{ $product->name }}</a></span>
+                                        </h3>
+                                        <p class="mt-2">{{ $product->application }}</p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <a href=""><img src="/front/img/33.jpg" class="card-img-top"></a>
-                            <div class="card-body text-center">
-                                <h3 class="heading h5 mb-1">
-                                    <span class="d-block"><a href="">Decoloration</a></span>
-                                </h3>
-                                <p class="mt-2">Clean code developer, creator of Boomerang</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <a href=""><img src="/front/img/44.jpg" class="card-img-top"></a>
-                            <div class="card-body text-center">
-                                <h3 class="heading h5 mb-1">
-                                    <span class="d-block"><a href="">Molecular Sieve Powder</a></span>
-                                </h3>
-                                <p class="mt-2">Clean code developer, creator of Boomerang</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -146,44 +115,23 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card bg-lighter mb-lg mb-lg-0">
-                            <div class="px-3">
-                                <img class="card-img z-depth-2" src="/front/img/anli3.jpg" style="margin-top: -30px;"
-                                    alt="Homapage">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title mb-2">XH-7 XH-9 Refrigerated molecular sieve</h5>
-                                <p class="card-text">Used for refrigeration systems such as air conditioning and
-                                    refrigerators
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card bg-lighter mb-lg mb-lg-0">
-                            <div class="px-3">
-                                <img class="card-img z-depth-2" src="/front/img/anli4.jpg" style="margin-top: -30px;"
-                                    alt="Homapage">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title mb-2">3A molecular sieve</h5>
-                                <p class="card-text">Used for insulating glass</p>
+                    @foreach ($anlis as $anli)
+                        <div class="col-md-4">
+                            <div class="card bg-lighter mb-lg mb-lg-0">
+                                <a href="/application/{{ $anli->slug }}" target="_blank">
+                                    <div class="px-3">
+                                        <img class="card-img z-depth-2" src="{{ $anli->thumpic }}"
+                                            style="margin-top: -30px;" alt="Homapage">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-2">{{ $anli->title }}</h5>
+                                        <p class="card-text">{{ $anli->description }}
+                                        </p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card bg-lighter mb-lg mb-lg-0">
-                            <div class="px-3">
-                                <img class="card-img z-depth-2" src="/front/img/anli1.jpg" style="margin-top: -30px;"
-                                    alt="Homapage">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title mb-2">molecular sieve powder</h5>
-                                <p class="card-text">details</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -224,7 +172,7 @@
                     <div class="card border-0">
                         <img src="{{ $new->thumpic }}" class="img-fluid img-center rounded z-depth-2">
                         <div class="pt-4">
-                            <span class="text-muted">{{$new->created_at}}</span>
+                            <span class="text-muted">{{ $new->created_at }}</span>
                             <a href="/news/{{ $new->slug }}" class="heading h4 d-block mt-1">{{ $new->title }}</a>
                             <p class="mt-3">
                                 {{ $new->description }}

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('keywords');
             $table->string('description');
+            $table->boolean('isRecommend')->default(0);
             $table->string('price')->nullable();
             $table->string('package')->nullable();
             $table->string('application')->nullable();

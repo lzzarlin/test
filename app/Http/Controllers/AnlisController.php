@@ -61,11 +61,17 @@ class AnlisController extends Controller
     public function update(Request $request, ImageUploadHandler $uploader, Anli $anli)
     {
         $data = $request->all();
+
         if (request()->hasFile('thumpic')) {
             $result = $uploader->save($request->thumpic, 'anli', '', 300);
             if ($result) {
                 $data['thumpic'] = $result['path'];
             }
+        }
+        if ($request->has('isRecommend')) {
+            $data['isRecommend'] = 1;
+        } else {
+            $data['isRecommend'] = 0;
         }
         $anli->fill($data);
         $anli->save();

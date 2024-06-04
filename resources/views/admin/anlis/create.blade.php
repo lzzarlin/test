@@ -47,6 +47,13 @@
                             <textarea name="description" class="form-control" rows="5"></textarea>
                         </div>
                         <div class="mb-3">
+                            <div class="form-label">是否推荐</div>
+                            <label class="form-check form-switch">
+                                <input class="form-check-input" name="isRecommend" value="1" type="checkbox">
+                                <span class="form-check-label">打开表示推荐</span>
+                            </label>
+                        </div>
+                        <div class="mb-3">
                             <div class="row">
                                 <div class="col-auto">
                                     <span class="avatar avatar-xl" style="background-image: url(/dist/img/000f.jpg)"></span>
@@ -69,7 +76,7 @@
                     </div>
                 </form>
             </div>
-            
+
         </div>
     </div>
 @stop
@@ -85,7 +92,7 @@
             var editor = new Simditor({
                 textarea: $('#editor'),
                 upload: {
-                    url: '{{ route('products.upload_image') }}',
+                    url: '{{ route('products.uploadimage') }}',
                     params: {
                         _token: '{{ csrf_token() }}'
                     },

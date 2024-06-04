@@ -56,6 +56,13 @@
                             <textarea name="description" class="form-control" rows="5"></textarea>
                         </div>
                         <div class="mb-3">
+                            <div class="form-label">是否推荐</div>
+                            <label class="form-check form-switch">
+                                <input class="form-check-input" name="isRecommend" value="1" type="checkbox">
+                                <span class="form-check-label">打开表示推荐</span>
+                            </label>
+                        </div>
+                        <div class="mb-3">
                             <label class="form-label">price</label>
                             <input name="price" class="form-control">
                         </div>
