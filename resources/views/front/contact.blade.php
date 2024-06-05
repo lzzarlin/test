@@ -16,25 +16,7 @@
 
 @section('main')
     <main class="main py-5 my-5">
-        <section class="slice slice-xl">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-7">
-                        <div class="text-center pt-lg-md">
-                            <h2 class="heading h1 mb-4">
-                                Wanna Contact Us?
-                            </h2>
-                            <p class="lead lh-180">
-                                We are a professional manufacturer of desiccants, adsorbents, and catalysts. Please feel
-                                free to contact us for cooperation.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="slice slice-lg py-5 mt-5">
+        <section class="slice slice-lg">
             <div class="container">
                 <div class="row align-items-center cols-xs-space cols-sm-space cols-md-space">
                     <div class="col-lg-6">
@@ -77,6 +59,13 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <input class="form-control" placeholder="Name" name="name" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Phone" name="phone" type="text">
                                     </div>
                                 </div>
                             </div>

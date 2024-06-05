@@ -15,7 +15,7 @@ class MessagesController extends Controller
         $data = $request->all();
         if ($request->validated()){
             // XSS 漏洞过滤 user_topic_body 为 调用 config/purifier.php 文件中的过滤规则
-            $data['message'] = clean($request->messages, 'user_topic_body');
+            $data['message'] = clean($request->message, 'user_topic_body');
         }
         $message = Message::create($data);
         if ($message) {

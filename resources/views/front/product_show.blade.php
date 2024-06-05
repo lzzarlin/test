@@ -31,7 +31,9 @@
             <!-- Product Top -->
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="card flex-md-row mb-4 box-shadow h-xl-300">
+                    {{-- <div class="card flex-md-row mb-4 box-shadow h-xl-300"> 修复图片超出高度问题--}}
+                    
+                    <div class="card flex-md-row mb-4 box-shadow">
                         <!-- 产品图片轮播图 -->
                         <div id="carousel-indicators-thumb" class="carousel slide carousel-fade" data-bs-ride="carousel">
                             <div class="carousel-indicators carousel-indicators-thumb">
@@ -80,7 +82,8 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="card flex-md-row mb-4 box-shadow h-xl-300">
+                    {{-- <div class="card flex-md-row mb-4 box-shadow h-xl-300">  修复图片超出高度问题--}}
+                    <div class="card flex-md-row mb-4 box-shadow">
                         <div class="card-body d-flex flex-column align-items-start">
                             <strong class="d-inline-block mb-2 text-success">Product Information</strong>
                             <h1 class="mb-1">

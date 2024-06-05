@@ -18,6 +18,7 @@
                     <a class="dropdown-item" href="/products/desiccant">Desiccant</a>
                     <a class="dropdown-item" href="/products/activated-molecular-sieve-powder">Activated Molecular Sieve
                         Powder</a>
+                    <a class="dropdown-item" href="/product/activated-alumina">Activated-Alumina</a>
                     <a class="dropdown-item" href="/products/special-molecular-sieve">Special Molecular Sieve</a>
                 </div>
             </li>

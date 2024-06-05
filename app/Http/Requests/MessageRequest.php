@@ -26,6 +26,7 @@ class MessageRequest extends FormRequest
         return [
             //
             'name' => 'required|min:3',
+            'phone' => 'required|min:7|max:18',
             'email' => 'required|email',
             'message'=> 'min:10|max:8000',
         ];
