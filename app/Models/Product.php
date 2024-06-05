@@ -39,4 +39,8 @@ class Product extends Model
     {
         return $this->hasMany(Anli::class);
     }
+    public function ask()
+    {
+        return $this->hasMany(Ask::class);
+    }
 }

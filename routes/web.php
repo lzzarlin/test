@@ -14,6 +14,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::resource('categories', 'CategoriesController');
     Route::resource('products', 'ProductsController');
     Route::resource('news', 'NewsController');
+    Route::resource('asks', 'AsksController');
     Route::resource('anlis', 'AnlisController');
     Route::resource('banners', 'BannersController');
     // 图片上传路由
