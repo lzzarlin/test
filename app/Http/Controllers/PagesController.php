@@ -108,10 +108,10 @@ class PagesController extends Controller
     }
     public function newsList(Request $request, Category $category)
     {
-        // 查询出所有案例栏目 非顶级栏目
+        // 查询出所有新闻 非顶级栏目
         $categories = Category::where('type', '=', '2')->where('id', '!=', '2')->get();
         // $category = DB::table('categories')->where('slug', 'molecular-sieve')->first();
-        $news = News::where('category_id', '=', $category->id)->paginate('6');
+        $news = News::where('category_id', '=', $category->id)->orderBy('id', 'desc')->paginate('6');
         return view('front.news_list', compact('categories', 'news', 'category'));
     }
     public function newsShow(Request $request, News $news)

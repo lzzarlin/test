@@ -27,7 +27,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        $categories = Category::where('type', '3')->get();
+        $categories = Category::where('type', '3')->where('id','!=','3')->orderBy('id', 'desc')->get();
         return view('admin.news.create', compact('categories'));
     }
 

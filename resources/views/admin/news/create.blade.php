@@ -71,10 +71,29 @@
     <script src="/js/hotkeys.js"></script>
     <script src="/js/uploader.js"></script>
     <script src="/js/simditor.js"></script>
+    {{-- 增加编辑器 编辑源码功能 --}}
+    <script src="https://cdn.bootcss.com/js-beautify/1.7.5/beautify-html.js"></script>
+    <script src="/js/simditor-html.js"></script>
+    <style>
+        .simditor.simditor-html .simditor-wrapper>textarea {
+            display: block !important;
+        }
 
+        .simditor.simditor-html .simditor-body,
+        .simditor.simditor-html .simditor-placeholder {
+            display: none;
+        }
+    </style>
+    {{-- 增加编辑器 编辑源码功能结束 --}}
+    
     <script>
         $(document).ready(function() {
             var editor = new Simditor({
+                toolbar: [
+                    'title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale',
+                    'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link',
+                    'image', 'hr', '|', 'alignment', '|', 'html'
+                ],
                 textarea: $('#editor'),
                 upload: {
                     url: '{{ route('products.uploadimage') }}',
