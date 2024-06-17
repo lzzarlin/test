@@ -37,7 +37,7 @@
                             China Factory
                         </h3>
                         <p class="lead mt-4 mb-4">
-                            Email: <a href="mailto:" rel="nofollow">lzzarlin2022@gmail.com</a>
+                            Email: <a href="mailto:lzzarlin2022@gmail.com" rel="nofollow">lzzarlin2022@gmail.com</a>
                             <br>
                             Tel&Wechat: +86 189 5507 8288
                         </p>

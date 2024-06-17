@@ -78,6 +78,7 @@ Route::get('/news/{news:slug}', 'PagesController@newsShow')->name('news.show');
 // 关于我们路由
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/contact', 'PagesController@contact')->name('contact');
+Route::get('/sitemap.xml', 'SitemapController@siteMap')->name('sitemap');
 
 // // 列表页路由
 // Route::get('/products/{category:slug}', 'PagesController@category')->name('category.product');

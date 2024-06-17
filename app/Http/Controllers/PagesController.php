@@ -16,7 +16,7 @@ class PagesController extends Controller
     public function root()
     {
         if (auth()->check()) {
-            $messages = Message::paginate(10);
+            $messages = Message::orderBy('created_at', 'desc')->paginate(10);
             return view('pages.root', compact('messages'));
         }
         return redirect()->to('login');

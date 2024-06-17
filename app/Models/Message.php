@@ -12,6 +12,7 @@ class Message extends Model
         'name',
         'phone',
         'email',
-        'message'
+        'message',
+        'ip_address'
         ];
 }

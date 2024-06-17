@@ -1,5 +1,5 @@
 <div class="container">
-    <a class="navbar-brand" href="./index.html"><img src="/front/img/logo.png"></a>
+    <a class="navbar-brand" href="/"><img src="/front/img/logo.png"></a>
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02"
         aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

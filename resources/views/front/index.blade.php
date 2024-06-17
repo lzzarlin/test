@@ -155,7 +155,7 @@
                 </div>
                 <div class="col-lg-3 ml-lg-auto">
                     <div class="text-center text-md-right">
-                        <a href="#" class="btn bg-secondary-white">
+                        <a href="/contact" class="btn bg-secondary-white">
                             Contact us
                         </a>
                     </div>
