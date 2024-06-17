@@ -28,6 +28,7 @@
                                 <tr>
                                     <th>姓名</th>
                                     <th>电话</th>
+                                    <th>ip</th>
                                     <th>邮件</th>
                                     <th>留言</th>
                                     <th>留言时间</th>
@@ -46,6 +47,9 @@
                                         </td>
                                         <td>
                                             <div class="text-secondary">{{ $message->phone }}</div>
+                                        </td>
+                                        <td>
+                                            <div class="text-secondary">{{ $message->ip_address }}</div>
                                         </td>
                                         <td>
                                             <div class="text-secondary">{{ $message->email }}</div>
