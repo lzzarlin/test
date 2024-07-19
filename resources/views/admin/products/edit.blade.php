@@ -70,8 +70,8 @@
                             <input name="price" class="form-control" value="{{ $product->price }}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">packge</label>
-                            <input name="package" class="form-control" value="{{ $product->pakage }}">
+                            <label class="form-label">package</label>
+                            <input name="package" class="form-control" value="{{ $product->package }}">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">行业应用</label>

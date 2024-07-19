@@ -20,6 +20,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     // 图片上传路由
     Route::post('upload_image', 'ProductsController@upload_Image')->name('products.upload_image');
     Route::post('uploadimage', 'ProductsController@uploadImage')->name('products.uploadimage');
+    // 删除消息
 });
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

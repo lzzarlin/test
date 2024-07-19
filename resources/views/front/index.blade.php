@@ -4,8 +4,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,600,800" rel="stylesheet">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <!-- Main CSS -->
     <link href="/front/css/main.css" rel="stylesheet" />
     <!-- Animation CSS -->
@@ -146,9 +145,9 @@
         <div class="container">
             <div class="row align-items-center cols-xs-space cols-sm-space cols-md-space text-center text-lg-left">
                 <div class="col-lg-7">
-                    <h1 class="heading h2 text-white strong-500">
+                    <h2 class="heading h2 text-white strong-500">
                         Need more information about our products ?
-                    </h1>
+                    </h2>
                     <p class="lead text-white mb-0">Guangji Industrial has a very complete product line, with various
                         spherical molecular sieves, activated molecular sieve powders, activated alumina and other
                         products.</p>

@@ -67,7 +67,7 @@
                             <input name="price" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">packge</label>
+                            <label class="form-label">package</label>
                             <input name="package" class="form-control">
                         </div>
                         <div class="mb-3">

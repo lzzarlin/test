@@ -80,19 +80,19 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>http://en.gj528.com/newss</loc>
+        <loc>http://en.gj528.com/news</loc>
         <lastmod><?php echo date("Y-m-d") ?></lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>http://en.gj528.com/industry-news</loc>
+        <loc>http://en.gj528.com/newss/industry-news</loc>
         <lastmod><?php echo date("Y-m-d") ?></lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>http://en.gj528.com/company-news</loc>
+        <loc>http://en.gj528.com/newss/company-news</loc>
         <lastmod><?php echo date("Y-m-d") ?></lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
@@ -112,7 +112,7 @@
     @foreach ($products as $product)
 <url>
         <loc>http://en.gj528.com/product/{{$product->slug}}</loc>
-        <lastmod>{{ $product->updated_at }}</lastmod>
+        <lastmod>{{ $product->updated_at->toDateString() }}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -120,7 +120,7 @@
     @foreach ($anlis as $anli)
 <url>
         <loc>http://en.gj528.com/application/{{ $anli->slug }}</loc>
-        <lastmod>{{ $anli->updated_at }}</lastmod>
+        <lastmod>{{ $anli->updated_at->toDateString() }}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -128,7 +128,7 @@
     @foreach ($news as $new)
 <url>
         <loc>http://en.gj528.com/news/{{ $new->slug }}</loc>
-        <lastmod>{{ $new->updated_at }}</lastmod>
+        <lastmod>{{ $new->updated_at->toDateString() }}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>

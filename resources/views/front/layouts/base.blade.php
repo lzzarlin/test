@@ -6,9 +6,9 @@
     <link rel="apple-touch-icon" sizes="76x76" href="/front/img/favicon.ico">
     <link rel="icon" type="image/png" href="/front/img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>@yield('title', 'molecular cieve, desicant, activated alumina, manufacturer in China - GuangJi')</title>
-    <meta name="keywords" content="@yield('keywords', 'molecular cieve, desicant, activated alumina')" />
-    <meta name="description" content="@yield('description', 'Our main products include various molecular sieves, activated molecular sieve powder, activated alumina, desiccant clay ... samples free')" />
+    <title>@yield('title', 'molecular sieve|desiccant|activated alumina|clay desiccant|manufacturer in China - GuangJi')</title>
+    <meta name="keywords" content="@yield('keywords', 'molecular sieve,molecular sieves,desiccant,activated alumina,clay desiccant,manufacturer in China')" />
+    <meta name="description" content="@yield('description', 'GuangJi is a molecular sieve manufacturer in china, Our main products include various molecular sieves, activated molecular sieve powder, activated alumina, clay desiccant... samples free')" />
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     @yield('style')
 
